@@ -1,0 +1,10 @@
+Generation of .wfn from GAMESS .dat files:
+for i in *_HeHe_*.dat; do sed -n "/TOP OF INPUT/,/END OF INPUT/p" $i | grep -v BADER > ${i%.*}.wfn; done
+Generation of .energy from .wfn files (GAMESS): 
+for i in *.wfn; do sed -n "/USELIBXC ENERGY/p" $i > ${i%.*}.energy; done
+Generation of .energy from .wfn files (Gaussian): 
+for i in */*.wfn; do sed -n "/TOTAL ENERGY/p" $i > ${i%.*}.energy; done
+
+Multiwfn options to get Hellmann-Feynman forces:
+100
+20

@@ -1,0 +1,13 @@
+%nprocshared = 24
+%mem = 80GB
+#p CCSD-full/GEN Integral=(grid=999974) SCF=(Conver=11) output = wfn density = current Force 
+
+title calculation of HelFey forces
+
+0 1
+He 0. 0. 0.
+
+@ACC6m_gaussian_He.gbs
+
+He_CCSD-full_ACC6.wfn
+
